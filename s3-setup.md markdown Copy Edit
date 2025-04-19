@@ -1,0 +1,52 @@
+# 🛠️ AWS S3 Static Website Setup Guide
+
+Follow these simple steps to host your static website on Amazon S3:
+
+---
+
+## 1. Create an S3 Bucket
+
+- Go to [AWS S3 Console](https://s3.console.aws.amazon.com/s3/)
+- Click “Create Bucket”
+- Name it (must be globally unique)
+- Uncheck “Block all public access” under permissions
+- Leave other settings default and create
+
+---
+
+## 2. Upload Files
+
+- Go to your new bucket
+- Click “Upload”
+- Add `index.html` and `error.html`
+- Click “Upload”
+
+---
+
+## 3. Enable Static Website Hosting
+
+- Go to **Properties** tab of the bucket
+- Scroll down to **Static website hosting**
+- Enable it
+- Set:
+  - Index document: `index.html`
+  - Error document: `error.html`
+
+---
+
+## 4. Set Bucket Policy (Public Access)
+
+- Go to the **Permissions** tab → **Bucket Policy**
+- Paste this policy (from `bucket-policy.json`)
+
+---
+
+## 5. Access Your Website
+
+- Go back to **Properties**
+- Copy the **Website endpoint URL**
+- Open in your browser to view your live site!
+
+---
+
+✅ Done! Your static site is now hosted on AWS S3.
